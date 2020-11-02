@@ -2,7 +2,7 @@
 ## COVID related twitter data analysis
 In this project twitter data is analysed in order to understand how people react interventions.
 
-In this project I will work ** first time ** on;
+In this project I will work  **first time**  on;
 - Twitter developer account.
 - GitHub 
 - API trials and implementation
