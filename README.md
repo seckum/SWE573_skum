@@ -12,4 +12,4 @@ Every week I will updated how much effort I spend on this project.
 
 | Number of Weeks | Effort |
 | --- | --- |
-|*Week 1*| 8 Hours |
+|*Week 1*| 10 Hours |
