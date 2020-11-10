@@ -14,3 +14,5 @@ Every week I will updated how much effort I spend on this project.
 | --- | --- |
 |*Week 1*| 10 Hours |
 |*Week 2*| 11 Hours |
+
+- [**Weekly Effort**](https://github.com/seckum/SWE573_skum/wiki/Effort-Tracking)
