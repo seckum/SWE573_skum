@@ -15,6 +15,7 @@ Every week I will updated how much effort I spend on this project.
 |*Week 1*| 10 Hours |
 |*Week 2*| 11 Hours |
 
+<<<<<<< HEAD
 GIT is basically a version control system, it is very useful with team work. Every team member can see their tasks and update their works to the GIT-Hub and every team member can follow the latest code. Changed section can be traced very easily. 
 According to my research many users were adviced to use GIT terminal. In this terminal you can send your work to GIT-Hub with the codes. Also you can upload from the GIT-Hub desktop application which has very user friendly screens. I tried to use both of them.
 Some git terminal notes as below;
@@ -44,3 +45,6 @@ If you want to download latest works from the git.You should follow belowed sequ
 At git envoirenment you can select your friends as contributor so they could follow your work or they could review or update your codes.
 You can create project section where you can follow the open issues and timelines.
 You can customise your labels with different colors, this defines the work you are doing.(Exp. Urgent)
+=======
+- [**Weekly Effort**](https://github.com/seckum/SWE573_skum/wiki/Effort-Tracking)
+>>>>>>> e1407cbe6efe8df73304b8f27aea583cb2c9d6a3
