@@ -14,6 +14,8 @@ Every week I will updated how much effort I spend on this project.
 | --- | --- |
 |*Week 1*| 10 Hours |
 |*Week 2*| 11 Hours |
+|*Week 3*| 11 Hours |
+|*Week 4*| 11 Hours |
 
 <<<<<<< HEAD
 GIT is basically a version control system, it is very useful with team work. Every team member can see their tasks and update their works to the GIT-Hub and every team member can follow the latest code. Changed section can be traced very easily. 
