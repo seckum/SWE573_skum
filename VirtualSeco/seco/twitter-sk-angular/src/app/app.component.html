@@ -1,0 +1,37 @@
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" routerLink="/login">Login</a>
+        <a class="nav-item nav-link" routerLink="/register">Register</a>
+        <a style="min-width: 300px;" class="nav-item nav-link" >
+          <div class="input-group no-border">
+        <input
+          type="text"
+          value=""
+          class="form-control"
+          placeholder="Twitter Data Fetch Keywords..."
+          [(ngModel)]="searchField"
+        />
+        <button
+          mat-raised-button
+          type="submit"
+          class="btn btn-white btn-round btn-just-icon"
+          (click)="onSearch()"
+        >
+          <mat-icon aria-hidden="false" aria-label="search icon"
+            >search</mat-icon
+          >
+          <div class="ripple-container"></div>
+        </button>
+      </div>
+        </a>
+    </div>
+</nav>
+
+<!-- main content container -->
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <router-outlet></router-outlet>

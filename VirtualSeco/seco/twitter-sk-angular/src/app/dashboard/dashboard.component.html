@@ -1,0 +1,72 @@
+<nav
+  class="navbar navbar-expand-lg navbar-absolute fixed-top"
+>
+  <div class="row mb-3 mt-3 w-100">
+    <div class="col-md-4 mx-auto">
+      <div class="input-group no-border">
+        <input
+          type="text"
+          value=""
+          class="form-control"
+          placeholder="Analyse Keyword..."
+          [(ngModel)]="searchField"
+        />
+        <button
+          mat-raised-button
+          type="submit"
+          class="btn btn-white btn-round btn-just-icon"
+          (click)="onSearch()"
+        >
+          <mat-icon aria-hidden="false" aria-label="search icon"
+            >search</mat-icon
+          >
+          <div class="ripple-container"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="row search-result">
+  <div class="col-12 mx-auto">
+    <div class="card card-chart">
+      <div class="card-header card-header-primary">
+        <div class="ct-chart" id="websiteViewsChart1"></div>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Most Frequently Used Words</h4>
+        <p class="card-category">Most Frequent 15 Words</p>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 mx-auto">
+    <div class="card card-chart">
+      <div class="card-header card-header-success">
+        <div class="ct-chart" id="websiteViewsChart2"></div>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Sentiment Analyse</h4>
+        <button
+          mat-button
+          color="primary"
+          type="submit"
+          class="btn btn-success "
+          (click)="sentimentAnalysis()"
+        >
+          Start Analysis
+        </button>
+        <p class="card-category">Shows Sentiment Analyse Results</p>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
