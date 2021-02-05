@@ -1,17 +1,10 @@
-from django.shortcuts import render
 from twitterSearch import serializers
 from rest_framework.decorators import api_view
 from twitterSearch.models import Stocks
 from django.http import JsonResponse, HttpResponse
-import json
 from django.core import serializers
 import tweepy
 import json
-from dateutil import parser
-import time
-import os
-import subprocess
-import numpy as np
 from textblob import TextBlob
 import itertools
 import collections
@@ -19,8 +12,6 @@ import nltk
 from nltk.corpus import stopwords
 import re
 from django.contrib.auth import authenticate, login
-
-
 # Keys
 consumer_key = "y3fsRzMCmLCvePp6r7yLUBLRZ"
 consumer_secret ="zz3ETK75dYMNOzQVgjmcNr0up8aw1fVNUMVil2H60lSZlVUU7C"
@@ -57,7 +48,7 @@ def twitterSearch_list(request):
 
         return JsonResponse(sentiment_values,safe=False,content_type="application/json")
 
-    else: 
+    else:
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
         tsl = Stocks(**body)
@@ -76,7 +67,7 @@ def twitterSearch_freq(request):
     stop_words = set(stopwords.words('english'))
     tweets_nsw = [[word for word in tweet_words if not word in stop_words]
                   for tweet_words in words_in_tweet]
-    collection_words = ['covid','covid19']
+    collection_words = [request.GET.get("sw",None)]
     tweets_nsw_nc = [[w for w in word if not w in collection_words]
                      for word in tweets_nsw]
     all_words_nsw_nc=list(itertools.chain(*tweets_nsw_nc))
@@ -98,9 +89,11 @@ def addTwitterSearch(request):
     for tweet in tweets:
         print(tweet.user.screen_name)
         # insert data to DB
-        data = {"username": tweet.user.screen_name, "created_at": tweet.created_at, 'tweet': tweet.text, "retweet_count": tweet.retweet_count,
-                'place':"", 'location': tweet.user.location}
-        tsl = Stocks(**data)
+        #data = {"username": tweet.user.screen_name, "created_at": tweet.created_at, 'tweet': tweet.text, "retweet_count": tweet.retweet_count,
+        #        'place':"", 'location': tweet.user.location}
+        text=tweet.text.encode('utf-8')
+        tsl = Stocks(username= tweet.user.screen_name.encode('utf-8'), created_at= tweet.created_at, tweet= text, retweet_count= tweet.retweet_count,
+                place="a".encode('utf-8'), location= tweet.user.location.encode('utf-8'))
         tsl.save()
     print(tweets)
     print(request.body)
@@ -122,3 +115,6 @@ def loginUSER(request):
     else:
         # Return an 'invalid login' error message.
         return JsonResponse({},status=403)
+
+
+
